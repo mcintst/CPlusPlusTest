@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C9416E501AFA21D20099D32F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9416E4F1AFA21D20099D32F /* main.swift */; };
+		C9416E591AFA220E0099D32F /* MyTestClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9416E571AFA220E0099D32F /* MyTestClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		C9416E4C1AFA21D20099D32F /* C++Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9416E4F1AFA21D20099D32F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C9416E561AFA220D0099D32F /* C++Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "C++Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9416E571AFA220E0099D32F /* MyTestClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyTestClass.cpp; sourceTree = "<group>"; };
+		C9416E581AFA220E0099D32F /* MyTestClass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = MyTestClass.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				C9416E4F1AFA21D20099D32F /* main.swift */,
+				C9416E571AFA220E0099D32F /* MyTestClass.cpp */,
+				C9416E581AFA220E0099D32F /* MyTestClass.h */,
+				C9416E561AFA220D0099D32F /* C++Test-Bridging-Header.h */,
 			);
 			path = "C++Test";
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9416E591AFA220E0099D32F /* MyTestClass.cpp in Sources */,
 				C9416E501AFA21D20099D32F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,14 +214,23 @@
 		C9416E541AFA21D20099D32F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_INPUT_FILETYPE = automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "C++Test/C++Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C9416E551AFA21D20099D32F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_INPUT_FILETYPE = automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "C++Test/C++Test-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -236,6 +253,7 @@
 				C9416E551AFA21D20099D32F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
